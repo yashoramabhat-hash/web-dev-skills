@@ -21,19 +21,35 @@ This pack splits the library three ways so the agent loads ~16 KB instead of ~50
 
 ## Install
 
-### OpenCode
+### One command
+
+**Windows / PowerShell** — installs for OpenCode:
 
 ```powershell
-powershell -NoProfile -ExecutionPolicy Bypass -File scripts/install.ps1
+irm https://raw.githubusercontent.com/yashoramabhat-hash/web-dev-skills/main/scripts/install.ps1 | iex
 ```
 
-### Claude Code
+**macOS / Linux / WSL / Git Bash** — installs for Claude Code:
 
 ```bash
-bash scripts/install.sh
+curl -fsSL https://raw.githubusercontent.com/yashoramabhat-hash/web-dev-skills/main/scripts/install.sh | bash
 ```
 
-Both install to the right place for your harness and are **add-only** — nothing existing is overwritten or removed.
+Both scripts are self-contained: fetched standalone they download the repository archive and install from that. No clone, no prerequisites.
+
+| Flag | Effect |
+|---|---|
+| `-Target Claude` (PS) / `TARGET=Claude` (sh) | install for Claude Code instead of OpenCode |
+| `-Force` (PS) / `FORCE=1` (sh) | overwrite existing files with the same name |
+
+### From a clone
+
+```bash
+git clone https://github.com/yashoramabhat-hash/web-dev-skills.git
+cd web-dev-skills
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/install.ps1   # Windows
+bash scripts/install.sh                                                # Unix
+```
 
 ### Manual
 
@@ -43,6 +59,8 @@ cp -r skills/*   ~/.claude/skills/             # Claude Code
 cp -r commands/* ~/.config/opencode/commands/  # OpenCode
 cp -r commands/* ~/.claude/commands/          # Claude Code
 ```
+
+All installers are **add-only** — existing skills and commands are never overwritten or removed. You get `web-dev-tools`, `web-dev-frontend`, `web-dev-backend`, `web-dev-security` and seven slash commands.
 
 ---
 
