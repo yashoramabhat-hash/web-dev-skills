@@ -1,0 +1,77 @@
+// Web-design MCP toolchain for OpenCode.
+// Merge the `mcp.servers` block below into your ~/.config/opencode/opencode.jsonc
+// (or opencode.json). Keep the servers you already have — this file only adds
+// the design/inspection toolchain.
+//
+// Two things to know:
+//   1. `mcp.timeout` must be large enough for first-run package downloads.
+//      120000 (2 min) is safe. Default is too short and servers "time out".
+//   2. Servers marked "keyed" need an API key. Free tier for all of them.
+
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "timeout": 120000,
+    "servers": {
+      // ===== Design & inspection =====
+      "chrome-devtools": {
+        "type": "local",
+        "command": ["cmd.exe", "/d", "/c", "C:\\Users\\ASUS\\AppData\\Roaming\\npm\\chrome-devtools-mcp.cmd"],
+        "environment": {
+          "CHROME_PATH": "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
+        }
+      },
+      "lighthouse": {
+        "type": "local",
+        "command": ["cmd.exe", "/d", "/c", "C:\\Users\\ASUS\\AppData\\Roaming\\npm\\lighthouse-mcp-server.cmd"],
+        "environment": {
+          "CHROME_PATH": "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe"
+        }
+      },
+      "context7": {
+        "type": "local",
+        "command": ["cmd.exe", "/d", "/c", "C:\\Users\\ASUS\\AppData\\Roaming\\npm\\context7-mcp.cmd"]
+      },
+      "lucide": {
+        "type": "local",
+        "command": ["cmd.exe", "/d", "/c", "C:\\Users\\ASUS\\AppData\\Roaming\\npm\\lucide-icons-mcp.cmd", "--stdio"]
+      },
+      "shadcn-registry": {
+        "type": "local",
+        "command": ["cmd.exe", "/d", "/c", "C:\\Users\\ASUS\\AppData\\Roaming\\npm\\shadcn.cmd", "mcp"]
+      },
+      "next-devtools": {
+        "type": "local",
+        "command": ["cmd.exe", "/d", "/c", "C:\\Users\\ASUS\\AppData\\Roaming\\npm\\next-devtools-mcp.cmd"]
+      },
+      "excalidraw": {
+        "type": "local",
+        "command": ["cmd.exe", "/d", "/c", "C:\\Users\\ASUS\\AppData\\Roaming\\npm\\mcp-excalidraw-server.cmd"],
+        "environment": {
+          "EXPRESS_SERVER_URL": "http://127.0.0.1:3100",
+          "PORT": "3100",
+          "HOST": "127.0.0.1"
+        }
+      },
+      "images": {
+        "type": "local",
+        "command": ["cmd.exe", "/d", "/c", "C:\\Users\\ASUS\\AppData\\Roaming\\npm\\stock-images-mcp.cmd"]
+      },
+      "fal": {
+        "type": "local",
+        "command": ["cmd.exe", "/d", "/c", "C:\\Users\\ASUS\\AppData\\Roaming\\npm\\fal-ai-mcp.cmd"],
+        "environment": { "FAL_KEY": "PASTE_KEY" }
+      },
+      "exa": {
+        "type": "local",
+        "command": ["cmd.exe", "/d", "/c", "C:\\Users\\ASUS\\AppData\\Roaming\\npm\\exa-mcp-server.cmd"],
+        "environment": { "EXA_API_KEY": "PASTE_KEY" }
+      },
+      "figma-official": {
+        "type": "remote",
+        "url": "https://mcp.figma.com/mcp",
+        "oauth": true
+      }
+    }
+  }
+}

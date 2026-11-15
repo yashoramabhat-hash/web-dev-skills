@@ -1,0 +1,39 @@
+{
+  "name": "web-dev-skills",
+  "version": "1.0.0",
+  "description": "Three-way web development skill pack for OpenCode / Claude Code — frontend design, backend APIs, and web & app security — with slash-command pickers and the full web-design MCP toolchain.",
+  "author": {
+    "name": "Web Dev Skills contributors"
+  },
+  "license": "MIT",
+  "keywords": [
+    "web-design",
+    "frontend",
+    "backend",
+    "appsec",
+    "security",
+    "opencode",
+    "claude-code",
+    "skills",
+    "mcp",
+    "accessibility",
+    "lighthouse",
+    "figma",
+    "shadcn"
+  ],
+  "skills": [
+    "./skills/web-dev-tools",
+    "./skills/web-dev-frontend",
+    "./skills/web-dev-backend",
+    "./skills/web-dev-security"
+  ],
+  "commands": [
+    "./commands/web.md",
+    "./commands/ui.md",
+    "./commands/backend.md",
+    "./commands/sec.md",
+    "./commands/rea.md",
+    "./commands/cracked.md",
+    "./commands/skills.md"
+  ]
+}

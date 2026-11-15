@@ -1,0 +1,34 @@
+{
+  "name": "web-dev-skills",
+  "version": "1.0.0",
+  "description": "Three-way web development skill pack for OpenCode and Claude Code: frontend design, backend APIs, and web & app security.",
+  "license": "MIT",
+  "private": false,
+  "type": "module",
+  "keywords": [
+    "opencode",
+    "claude-code",
+    "skills",
+    "web-design",
+    "frontend",
+    "backend",
+    "appsec",
+    "mcp",
+    "accessibility"
+  ],
+  "scripts": {
+    "build:index": "node scripts/build-index.js",
+    "install:opencode": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/install.ps1",
+    "install:unix": "bash scripts/install.sh"
+  },
+  "files": [
+    "skills",
+    "commands",
+    "index",
+    "instructions",
+    "scripts",
+    "README.md",
+    "LICENSE",
+    "AGENTS.md"
+  ]
+}
